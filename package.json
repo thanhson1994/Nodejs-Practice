@@ -1,0 +1,32 @@
+{
+  "name": "nodepractice",
+  "version": "1.0.0",
+  "description": "This is my first node",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thanhson1994/nodepractice.git"
+  },
+  "keywords": [
+    "thanhson"
+  ],
+  "author": "Le Thanh Son",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/thanhson1994/nodepractice/issues"
+  },
+  "homepage": "https://github.com/thanhson1994/nodepractice#readme",
+  "dependencies": {
+    "body-parser": "^1.19.1",
+    "express": "^4.17.2",
+    "mongodb": "^4.3.0",
+    "mongoose": "^6.1.6"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}
