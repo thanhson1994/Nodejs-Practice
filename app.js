@@ -11,12 +11,12 @@ const User = require('./models/user');
 // app.use(bodyParser.urlencoded()); // x-www-form-urlencoded <form>
 app.use(bodyParser.json()); // application/json
 
-// app.use((req, res, next) => {
-//     res.setHeader('Access-Control-Allow-Origin', '*');
-//     res.setHeader('Access-Control-Allow-Methods', 'OPTIONS, GET, POST, PUT, PATCH, DELETE');
-//     res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
-//     next();
-// });
+app.use((req, res, next) => {
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    res.setHeader('Access-Control-Allow-Methods', 'OPTIONS, GET, POST, PUT, PATCH, DELETE');
+    res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+    next();
+});
 app.use((req, res, next) => {
     User.findById('61de5b275258a7b7a90559d7').then(user => {
         req.user = user;
@@ -26,7 +26,7 @@ app.use((req, res, next) => {
 });
 app.use('/admin', adminRoutes);
 
-app.use('/feed', feedRoutes);
+app.use(feedRoutes);
 app.use(shopRoutes);
 
 
